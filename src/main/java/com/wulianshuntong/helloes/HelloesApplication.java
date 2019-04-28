@@ -18,13 +18,13 @@ public class HelloesApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
 
-    int i = 100;
-    
-    while (i-- > 0) {
-      Carrier carrier = new Carrier();
-      carrier.setId("" + i);
-      carrier.setName("名字 " + i);
-      carrierService.save(carrier);
-    } 
+    Carrier c = carrierService.findCarrierById("10");
+    System.out.println(c);
+
+    /*
+     * int i = 100; while (i-- > 0) { Carrier carrier = new Carrier();
+     * carrier.setId("" + i); carrier.setName("名字 " + i);
+     * carrierService.save(carrier); }
+     */
   }
 }
